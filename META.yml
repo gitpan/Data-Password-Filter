@@ -1,0 +1,27 @@
+---
+abstract: 'Interface to the password filter.'
+author:
+  - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
+build_requires:
+  Carp::Always: 0.10
+  Mouse: 0.93
+  Readonly: 1.03
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Data-Password-Filter
+provides:
+  Data::Password::Filter:
+    file: lib/Data/Password/Filter.pm
+    version: 0.01
+  Data::Password::Filter::Dictionary:
+    file: lib/Data/Password/Filter/Dictionary.pm
+    version: 0.01
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01

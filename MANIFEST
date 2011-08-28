@@ -1,0 +1,17 @@
+Build.PL
+Changes
+MANIFEST
+MANIFEST.SKIP
+SIGNATURE
+Makefile.PL
+README
+lib/Data/Password/Filter.pm
+lib/Data/Password/Filter/Dictionary.pm
+t/00-load.t
+t/01-new.t
+t/02-strength.t
+t/03-score.t
+t/manifest.t
+t/pod.t
+META.yml
+SIGNATURE    Added here by Module::Build
