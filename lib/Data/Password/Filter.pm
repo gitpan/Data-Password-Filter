@@ -16,18 +16,11 @@ Data::Password::Filter - Interface to the password filter.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
-Readonly my $DEFAULT_LENGTH                => 8;
-Readonly my $DEFAULT_MIN_LOWERCASE_LETTER  => 1;
-Readonly my $DEFAULT_MIN_UPPERCASE_LETTER  => 1;
-Readonly my $DEFAULT_MIN_SPECIAL_CHARACTER => 1;
-Readonly my $DEFAULT_MIN_DIGIT             => 1;
-Readonly my $DEFAULT_CHECK_VARIATION       => 1;
-Readonly my $DEFAULT_CHECK_DICTIONARY      => 1;
+our $VERSION = '0.02';
 Readonly my $STATUS =>
 {
     'check_dictionary'        => 'Check Dictionary       :',
@@ -100,7 +93,7 @@ longer than 3 characters from the user dictionary, if supplied.
     | min_uppercase_letter  | Minimum number of alphabets (A..Z) in uppercase. Default is 1. |
     | min_special_character | Minimum number of special characters. Default is 1.            |
     | min_digit             | Minimum number of digits (0..9). Default is 1.                 |
-    | check_variation       | 1 or 0, depending whether checking variations. Default is 1.   |
+    | check_variation       | 1 or 0, depending whether checking variation. Default is 1.    |
     | check_dictionary      | 1 or 0, depending whether checking dictionary. Default is 1.   |
     | user_dictionary       | User supplied dictionary file location. Default use its own.   |
     +-----------------------+----------------------------------------------------------------+
@@ -148,13 +141,19 @@ sub strength
 
 =head2 score()
 
-Returns the score (percentage) of the given password.
+Returns the score (percentage) of the given password  or  the  previous password for which the
+strength has been calculated.
 
     use strict; use warnings;
     use Data::Password::Filter;
 
-    my $password = Data::Password::Filter->new();
+    my ($password);
+    $password = Data::Password::Filter->new();
     print "Score: " . $password->score('Ab12345?') . "\n";
+
+    $password = Data::Password::Filter->new();
+    print "Strength: " . $password->strength('Ab54321?') . "\n";
+    print "Score: " . $password->score() . "\n";
 
 =cut
 
@@ -162,9 +161,10 @@ sub score
 {
     my $self   = shift;
     my $passwd = shift;
-    croak("ERROR: Missing password.\n") unless defined $passwd;
+    croak("ERROR: Missing password.\n")
+        unless (defined($passwd) || defined($self->{score}));
 
-    $self->_strength($passwd);
+    $self->_strength($passwd) if defined $passwd;
     return $self->{score};
 }
 
@@ -257,11 +257,7 @@ sub _checkDictionary
     my $self   = shift;
     my $passwd = shift;
 
-    ($self->_exists($passwd))
-    ?
-    ($self->{result}->{'check_dictionary'} = 0)
-    :
-    ($self->{result}->{'check_dictionary'} = 1);
+    $self->{result}->{'check_dictionary'} = !$self->_exists($passwd);
 }
 
 sub _checkLength
@@ -347,22 +343,22 @@ sub _checkVariation
         return;
     }
 
-    my ($length, $regexp, @FuzzyStrings);
+    my ($regexp, @_passwd);
     for (my $i = 0; $i <= (length($passwd)-1); $i++)
     {
         pos($passwd) = 0;
         while ($passwd =~ /(\w)/gc)
         {
             my $char = $1;
-            my $stringpos = pos($passwd)-1;
-            $char = '.' if ($stringpos == $i);
-            (defined($FuzzyStrings[$i]))
+            my $spos = pos($passwd)-1;
+            $char = '.' if ($spos == $i);
+            (defined($_passwd[$i]))
             ?
-            ($FuzzyStrings[$i] .= $char)
+            ($_passwd[$i] .= $char)
             :
-            ($FuzzyStrings[$i] = $char);
+            ($_passwd[$i] = $char);
         }
-        $regexp .= $FuzzyStrings[$i] . '|';
+        $regexp .= $_passwd[$i] . '|';
     }
     $regexp =~ s/\|$//g;
 
