@@ -1,7 +1,5 @@
 package Data::Password::Filter;
 
-use strict; use warnings;
-
 use Readonly;
 use Carp::Always;
 use Data::Dumper;
@@ -16,11 +14,11 @@ Data::Password::Filter - Interface to the password filter.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 Readonly my $STATUS =>
 {
     'check_dictionary'        => 'Check Dictionary       :',
@@ -67,7 +65,7 @@ sub BUILD
         %{$self->{word_hash}} = ();
 
         open(DICTIONARY, '<:encoding(UTF-8)', $self->user_dictionary)
-            or croak("ERROR: Couldn't open user dictionary ".$self->user_dictionary."][$!]\n");
+            or die("ERROR: Couldn't open user dictionary ".$self->user_dictionary."][$!]\n");
         while(my $word = <DICTIONARY>)
         {
             chomp($word);
@@ -134,7 +132,7 @@ sub strength
 {
     my $self   = shift;
     my $passwd = shift;
-    croak("ERROR: Missing password.\n") unless defined $passwd;
+    die("ERROR: Missing password.\n") unless (defined $passwd);
 
     return $self->_strength($passwd);
 }
@@ -161,7 +159,7 @@ sub score
 {
     my $self   = shift;
     my $passwd = shift;
-    croak("ERROR: Missing password.\n")
+    die("ERROR: Missing password.\n")
         unless (defined($passwd) || defined($self->{score}));
 
     $self->_strength($passwd) if defined $passwd;
@@ -265,11 +263,7 @@ sub _checkLength
     my $self   = shift;
     my $passwd = shift;
 
-    (length($passwd) < $self->{length})
-    ?
-    ($self->{result}->{'check_length'} = 0)
-    :
-    ($self->{result}->{'check_length'} = 1);
+    $self->{result}->{'check_length'} = !(length($passwd) < $self->{length});
 }
 
 sub _checkDigit
@@ -280,11 +274,7 @@ sub _checkDigit
     my $count = 0;
     $count++ while ($passwd =~ /\d/g);
 
-    ($count < $self->{min_digit})
-    ?
-    ($self->{result}->{'check_digit'} = 0)
-    :
-    ($self->{result}->{'check_digit'} = 1);
+    $self->{result}->{'check_digit'} = !($count < $self->{min_digit});
 }
 
 sub _checkLowercaseLetter
@@ -295,11 +285,7 @@ sub _checkLowercaseLetter
     my $count = 0;
     $count++ while ($passwd =~ /[a-z]/g);
 
-    ($count < $self->{min_lowercase_letter})
-    ?
-    ($self->{result}->{'check_lowercase_letter'} = 0)
-    :
-    ($self->{result}->{'check_lowercase_letter'} = 1);
+    $self->{result}->{'check_lowercase_letter'} = !($count < $self->{min_lowercase_letter});
 }
 
 sub _checkUppercaseLetter
@@ -310,11 +296,7 @@ sub _checkUppercaseLetter
     my $count = 0;
     $count++ while ($passwd =~ /[A-Z]/g);
 
-    ($count < $self->{min_uppercase_letter})
-    ?
-    ($self->{result}->{'check_uppercase_letter'} = 0)
-    :
-    ($self->{result}->{'check_uppercase_letter'} = 1);
+    $self->{result}->{'check_uppercase_letter'} = !($count < $self->{min_uppercase_letter});
 }
 
 sub _checkSpecialCharacter
@@ -325,11 +307,7 @@ sub _checkSpecialCharacter
     my $count = 0;
     $count++ while($passwd=~/!|"|#|\$|%|&|'|\(|\)|\*|\+|,|-|\.|\/|:|;|<|=|>|\?|@|\[|\\|]|\^|_|`|\{|\||}|~/g);
 
-    ($count < $self->{min_special_character})
-    ?
-    ($self->{result}->{'check_special_character'} = 0)
-    :
-    ($self->{result}->{'check_special_character'} = 1);
+    $self->{result}->{'check_special_character'} = !($count < $self->{min_special_character});
 }
 
 sub _checkVariation

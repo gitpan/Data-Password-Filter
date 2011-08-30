@@ -1,5 +1,9 @@
 Revision history for Data-Password-Filter
 
+0.03    Tue Aug 30 07:08:09 2011
+        - Refactored code base.
+        - Added more unit test case.
+
 0.02    Mon Aug 29 13:14:15 2011
         - Cleaned up code slightly.
 
