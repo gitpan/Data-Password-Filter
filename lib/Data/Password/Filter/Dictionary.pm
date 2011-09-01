@@ -8,16 +8,16 @@ Data::Password::Filter::Dictionary - Dictionary for Data::Password::Filter.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 DESCRIPTION
 
 Dictionary with words having more than 3 characters. The collection is derived from one of the
-most popular Linux distribution supplied dictionary file words.txt.
+most popular Linux distribution Debian 6 supplied package dictionaries-common v1.5.17.
 
 =cut
 

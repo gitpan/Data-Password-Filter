@@ -2,7 +2,7 @@
 
 use strict; use warnings;
 use Data::Password::Filter;
-use Test::More tests => 17;
+use Test::More tests => 18;
 
 eval { Data::Password::Filter->new('length' => 'a') };
 like($@, qr/Attribute \(length\) does not pass the type constraint/);
@@ -54,3 +54,6 @@ like($@, qr/Attribute \(user_dictionary\) does not pass the type constraint/);
 
 eval { Data::Password::Filter->new('user_dictionary' => 2) };
 like($@, qr/Attribute \(user_dictionary\) does not pass the type constraint/);
+
+eval { Data::Password::Filter->new('user_dictionary' => 't/DictionaryWithNoWord.txt') };
+like($@, qr/ERROR: Couldn't find word longer than 3 characters in the user dictionary/);

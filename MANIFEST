@@ -13,5 +13,6 @@ t/02-strength.t
 t/03-score.t
 t/manifest.t
 t/pod.t
+t/DictionaryWithNoWord.txt
 META.yml
 SIGNATURE    Added here by Module::Build

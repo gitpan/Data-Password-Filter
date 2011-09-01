@@ -18,10 +18,10 @@ name: Data-Password-Filter
 provides:
   Data::Password::Filter:
     file: lib/Data/Password/Filter.pm
-    version: 0.03
+    version: 0.04
   Data::Password::Filter::Dictionary:
     file: lib/Data/Password/Filter/Dictionary.pm
-    version: 0.03
+    version: 0.04
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04

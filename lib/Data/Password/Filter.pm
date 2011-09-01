@@ -14,11 +14,11 @@ Data::Password::Filter - Interface to the password filter.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 Readonly my $STATUS =>
 {
     'check_dictionary'        => 'Check Dictionary       :',
@@ -65,7 +65,7 @@ sub BUILD
         %{$self->{word_hash}} = ();
 
         open(DICTIONARY, '<:encoding(UTF-8)', $self->user_dictionary)
-            or die("ERROR: Couldn't open user dictionary ".$self->user_dictionary."][$!]\n");
+            or die("ERROR: Couldn't open user dictionary [".$self->user_dictionary."][$!]\n");
         while(my $word = <DICTIONARY>)
         {
             chomp($word);
@@ -73,6 +73,8 @@ sub BUILD
             push @{$self->{word_list}}, $word;
         }
         close(DICTIONARY);
+        die("ERROR: Couldn't find word longer than 3 characters in the user dictionary [".$self->user_dictionary."]\n")
+            unless scalar(@{$self->{word_list}});
         map { $self->{word_hash}->{lc($_)} = 1 } @{$self->{word_list}};
     }
 }
@@ -217,7 +219,7 @@ sub _strength
     $count = 0;
     foreach (keys %{$STATUS})
     {
-        $count++ if (defined($self->{result}->{$_}) && ($self->{result}->{$_}))
+        $count++ if (defined($self->{result}->{$_}) && ($self->{result}->{$_}));
     }
 
     $score = (100/(keys %{$STATUS})) * $count;
