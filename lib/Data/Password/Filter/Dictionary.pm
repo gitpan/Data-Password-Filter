@@ -8,11 +8,11 @@ Data::Password::Filter::Dictionary - Dictionary for Data::Password::Filter.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 DESCRIPTION
 
@@ -12191,7 +12191,7 @@ L<http://search.cpan.org/dist/Data-Password-Filter/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2011 Mohammad S Anwar.
+Copyright 2011-13 Mohammad S Anwar.
 
 This  program  is  free  software; you can redistribute it and/or modify it under the terms of
 either:  the  GNU  General Public License as published by the Free Software Foundation; or the

@@ -9,10 +9,9 @@ WriteMakefile(
     dist          => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean         => { FILES => 'Data-Password-Filter-*' },
     PREREQ_PM     => {
-        'Test::More'   => 0,
-        'Readonly'     => '1.03',
-        'Carp::Always' => '0.10',
-        'Mouse'        => '0.93',
+        'Test::More' => 0,
+        'Readonly'   => '1.03',
+        'Mouse'      => '0.93',
     },
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')

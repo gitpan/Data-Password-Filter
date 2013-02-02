@@ -16,3 +16,5 @@ t/pod.t
 t/DictionaryWithNoWord.txt
 META.yml
 SIGNATURE    Added here by Module::Build
+META.json
+SIGNATURE    Added here by Module::Build

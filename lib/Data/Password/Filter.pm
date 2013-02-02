@@ -1,7 +1,7 @@
 package Data::Password::Filter;
 
 use Readonly;
-use Carp::Always;
+use Carp;
 use Data::Dumper;
 
 use Mouse;
@@ -14,11 +14,11 @@ Data::Password::Filter - Interface to the password filter.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 Readonly my $STATUS =>
 {
     'check_dictionary'        => 'Check Dictionary       :',
@@ -40,7 +40,7 @@ L<http://perl.sys-con.com/node/1911661>
 
 =cut
 
-type 'ZeroOrOne' => where { /^[1|0]$/ };
+type 'ZeroOrOne' => where { /^[01]$/ };
 type 'Number'    => where { /^\d*$/ };
 type 'FilePath'  => where { -f $_ };
 
@@ -396,7 +396,7 @@ Christopher Frenz, author of "Visual Basic and Visual Basic .NET for Scientists 
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2011 Mohammad S Anwar.
+Copyright 2011-13 Mohammad S Anwar.
 
 This  program  is  free  software; you can redistribute it and/or modify it under the terms of
 either:  the  GNU  General Public License as published by the Free Software Foundation; or the

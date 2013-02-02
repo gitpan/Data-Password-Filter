@@ -1,5 +1,8 @@
 Revision history for Data-Password-Filter
 
+0.05    Sat Feb 02 13:14:19 2013
+        - Fixed the bug RT# 83027, RT# 83090.
+
 0.04    Thu Sep 01 09:10:11 2011
         - Added more test around the user defined dictionary file.
         - Minor changes to the pod of Data::Password::Filter::Dictionary module.

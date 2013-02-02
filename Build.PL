@@ -9,10 +9,9 @@ my $builder = Module::Build->new(
     dist_version_from => 'lib/Data/Password/Filter.pm',
     add_to_cleanup    => [ 'Data-Password-Filter-*' ],
     build_requires    => {
-        'Test::More'   => 0,
-        'Readonly'     => '1.03',
-        'Carp::Always' => '0.10',
-        'Mouse'        => '0.93',
+        'Test::More'  => 0,
+        'Readonly'    => '1.03',
+        'Mouse'       => '0.93',
     },
 );
 
