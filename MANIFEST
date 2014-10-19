@@ -5,7 +5,8 @@ SIGNATURE
 Makefile.PL
 README
 lib/Data/Password/Filter.pm
-lib/Data/Password/Filter/Dictionary.pm
+lib/Data/Password/Filter/Params.pm
+share/dictionary.txt
 t/00-load.t
 t/01-new.t
 t/02-strength.t
