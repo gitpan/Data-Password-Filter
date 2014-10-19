@@ -4,7 +4,7 @@
       "Mohammad S Anwar <mohammad.anwar@yahoo.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4001, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520",
    "license" : [
       "perl_5"
    ],
@@ -13,35 +13,31 @@
       "version" : "2"
    },
    "name" : "Data-Password-Filter",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
    "prereqs" : {
       "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
          "requires" : {
             "Mouse" : "0.93",
             "Readonly" : "1.03",
             "Test::More" : "0"
          }
-      },
-      "configure" : {
-         "requires" : {
-            "Module::Build" : "0.40"
-         }
-      }
-   },
-   "provides" : {
-      "Data::Password::Filter" : {
-         "file" : "lib/Data/Password/Filter.pm",
-         "version" : "0.05"
-      },
-      "Data::Password::Filter::Dictionary" : {
-         "file" : "lib/Data/Password/Filter/Dictionary.pm",
-         "version" : "0.05"
       }
    },
    "release_status" : "stable",
-   "resources" : {
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ]
-   },
-   "version" : "0.05"
+   "version" : "0.06"
 }

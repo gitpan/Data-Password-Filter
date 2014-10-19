@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.68.
+signed via the Module::Signature module, version 0.73.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,31 +14,28 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 d703b27319a32c8a637b472a0d695636a44e9776 Build.PL
-SHA1 eb953f50515f1fa1419b84d7c2f7cb3ae9891673 Changes
-SHA1 36de5708cd403550694ad4ba8d79aae184a4d10f MANIFEST
-SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
-SHA1 220f077d72e1303ac29fa1a72a2cc08692d8c023 META.json
-SHA1 365ac39a0dba645992676ef95b1ea80c40ce3776 META.yml
+SHA1 1ef00456a62220d5adbf307df3c9b0502b72c29f Changes
+SHA1 c5355b56e9be921a03bd1a1c491a2cf170dc414f MANIFEST
+SHA1 5f29cdcbfacb9c46ac155fff9844aceeb064aef1 MANIFEST.SKIP
 SHA1 f553abf15921e4c1250992f0bc21914536caf37b Makefile.PL
-SHA1 16a8e9b764bd07662434eeff1624665bfaa5dbe4 README
-SHA1 8036ba8abdf95867485e45477037728f1f44175b lib/Data/Password/Filter.pm
-SHA1 9b638c12b2fdd95988294d304b3fc7f43526e165 lib/Data/Password/Filter/Dictionary.pm
+SHA1 3bc49f74c6548764a9a0603e47dbc594ce898172 README
+SHA1 87a6a12b3a4cde946a29765cd4841e6d9fb415af lib/Data/Password/Filter.pm
+SHA1 0275c77ce419756d26edaff671ce3b44bea9fa24 lib/Data/Password/Filter/Dictionary.pm
 SHA1 afca763b8f073861b216924358a1263497f74f77 t/00-load.t
 SHA1 8859aed637e446cdc6963e5f7094ce530c8716a2 t/01-new.t
 SHA1 fef724bfc413d70f4461ae4d5e7475745aa2d746 t/02-strength.t
 SHA1 b202fdc3a285eedc27c5c5c746edb4a05c0dc1c5 t/03-score.t
-SHA1 57218c316b6921e2cd61027a2387edc31a2d9471 t/DictionaryWithNoWord.txt
+SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 t/DictionaryWithNoWord.txt
 SHA1 95683f98ea4210d7b8ba8bc45d6a62a5bbe4d899 t/manifest.t
 SHA1 73982a48f6781d3bc281a3168624f4301acf59b2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.11 (MingW32)
+Version: GnuPG v1
 
-iQEcBAEBAgAGBQJRDRlXAAoJENoXJXWo7C/pZPYIAKSmz8dIX/YMmbCIO0HBBe/2
-xEL8up8oMqUA9DCjFkTQroXVQoMJUMA+0G0sDPJ0eDwV1NFFKqP6wBwV4chz+6Ps
-k28A7iBADcMEDTT2FlaT+Tfa//JzTG4BZ1bNOWKFARAeF7qStWAYf3IZ0Rl+sAB7
-klLTpY636d1Kcr1YMAHiKmRDgAwkwYswLfiyyHooFn9bOvRwHV4Bt5gUxSbU56Vi
-PZmwogGaWopiH81rAwVb5vEbgOW69Xb1z6RP8WdbkipABV1rosV+mNQLfHu61Q4h
-PiASM4OeddWiggL/BwJWIepyLAt/I3bM9/wZh4oXhalcJLF9le+O0kkXVegxWYs=
-=zzAb
+iQEcBAEBAgAGBQJUQ9uJAAoJENoXJXWo7C/pMQUIAIiJNmGLXYxZ+xe0WoV0tEFF
+RqIeW59DYDwza8VhBsZbryvqFz8jnWZmU0O/G/KbPRYZ8rJYnljQa8yikLGiTUXg
+LIHW7cpdiwdMGsIJtV7FOW7O81LOtDQsAPyPRENStgNWNy7sgmLlelB/qqaRNKTa
+CgWiisE+pr9aJfMJ88epDCi27OEcIqRhk0esTqP3QJBHU7in9X+mmRqB9Zq0DVOq
+cy2UrKgrA4Ww5R5MCRg87T3asxEWEQCCLYNoOpssl9iw2Mg+SI2kuUp4RGih1J4y
+cgJGzfpRtKR1SGgINQSMIte8eYKoWT+4j0IMdSOp1Mqhz3+am3jpn4JMGMQjJsA=
+=QX4Y
 -----END PGP SIGNATURE-----
