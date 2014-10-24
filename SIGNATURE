@@ -14,13 +14,13 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 b70cb10b4a93931aea384d4d3c5f9fda80cb1a1f Changes
+SHA1 0ba97b209abbd8599df8af76925f2cf76bf3e4ee Changes
 SHA1 5610a1bb7accbea9c72dd5ac6b6661c67bd32aa0 MANIFEST
 SHA1 5f29cdcbfacb9c46ac155fff9844aceeb064aef1 MANIFEST.SKIP
-SHA1 4fbe6c59a077b279d80e780704fb96418e5b1f08 Makefile.PL
+SHA1 c3176c29e2fb0fe0b42d02eaab7ec3136151986b Makefile.PL
 SHA1 83ef2aef45cd2ab0df6979e4d660f1f65dd629ee README
-SHA1 b6bf50e2a2caf3e8ec72e1d34476183d93aa8ba8 lib/Data/Password/Filter.pm
-SHA1 2975eddd70e26b15294e0bd836e03b3f53f59db4 lib/Data/Password/Filter/Params.pm
+SHA1 c5bd03b75d5caabc5cdc3eee5ffb220069da9894 lib/Data/Password/Filter.pm
+SHA1 9a8a9469c4413ddd4e88ead071fa8bd43ac84f09 lib/Data/Password/Filter/Params.pm
 SHA1 1543bd5718eefb0dcadbb75adbb249d9ea24dc87 share/dictionary.txt
 SHA1 982bce79138c193558510e39cda704a440758aac t/00-load.t
 SHA1 b3417b160b037665472c89c3f79b969a8fdebd43 t/01-new.t
@@ -32,11 +32,11 @@ SHA1 73982a48f6781d3bc281a3168624f4301acf59b2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJURAnsAAoJENoXJXWo7C/pY8IH/jT/AhmG/4/lcSNEoHE08As9
-k0y2rqWW8fdG19oix7nO7EgOo+6FTECArtlEF81aJSjoUSfaCBdy7Pbrr5RtOY5J
-qyuB4u+0PqnHqV35qfzk+cGEbl9vnFxujnzvsy/N/iNWaAwEp0rPtDvZ8oBcqPbQ
-uDEtVeer5yE1HmbsXyBQRryA7RsU9h6ogYcL34Rm2gSFx6sEbwSE9J7Kdtcj7c5q
-0Z0cqkX8SA/3Wh9627GtyUgXKSblKSaUdz6IzLxq975VKa+32if7EAH2F+r8+Pnl
-8s4jv8AhA4Y8ucxY+djEy5wa42AornuBuUY9f/IAvJW8QObTdZIMJz+lm4T6v24=
-=bWAV
+iQEcBAEBAgAGBQJUSsblAAoJENoXJXWo7C/puJIH/jEc871EYYY0cKEUyKEGUWhB
+QIXXxqGRs0CdY2yut/cVKoVZYWrr/DfAshnYz3YdXdlTViGn2OfYJueZXzghXwOO
+RCYp9BFF6zyKbKW2bRGayTYZS3f5weiVrNp6T5i1syFtOW4ku42TOjEh0i/51a/i
+xlfYhmFzWblFp0xabru32tDKnMv919RA2i1sWKxFelx9Jpfbcrb3zwdpHix8Q/RH
+GYit7W/5z6GBXPKpI6CzAKKWNO8IlxI3BG8cEyQZQRFURkUmGvhSzFeZCMwFdJ5L
+Z7xgrpWj3B7S4hBh9fHuegqchzg5wFqs43lnq+gM3qqPm+HTNml4KyPECU3DzEQ=
+=Oxqr
 -----END PGP SIGNATURE-----
